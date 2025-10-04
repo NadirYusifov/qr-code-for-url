@@ -2,7 +2,7 @@ import * as yup from "yup";
 import { useFormik } from "formik";
 import QRCode from "react-qr-code";
 import { useRef, useState } from "react";
-import GitHubIcon from "./assets/github";
+import GitHubIcon from "./assets/icon/github";
 import * as htmlToImage from "html-to-image";
 
 export default function App() {
