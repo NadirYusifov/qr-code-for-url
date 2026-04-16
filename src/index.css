@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@layer base {
+    li {
+        @apply my-7
+    }
+}
