@@ -2,6 +2,6 @@
 
 @layer base {
     li {
-        @apply my-7
+        @apply my-5
     }
 }
