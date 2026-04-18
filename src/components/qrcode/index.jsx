@@ -4,7 +4,7 @@ import QRCode from "react-qr-code";
 import { useRef, useState } from "react";
 import * as htmlToImage from "html-to-image";
 
-const QRCodeComponent = () => {
+export const QRCodeComponent = () => {
   const [qrcode, setQRcode] = useState(false);
   const [value, setValue] = useState("");
   const schema = yup.object().shape({
@@ -59,13 +59,13 @@ const QRCodeComponent = () => {
   // ==============================
 
   return (
-    <section className="flex flex-col justify-center items-center h-screen">
+    <section className="flex flex-col justify-center items-center h-dvh">
       <article>
-        <h1 className="text-[1.875rem] font-bold mb-20">QR Code Generate</h1>
+        <h1 className="text-[1.875rem] text-center font-bold mb-20">QR Code Generate</h1>
       </article>
       <div>
         <article>
-          <h3 className="text-2xl font-bold ">
+          <h3 className="text-2xl font-bold text-center">
             {!qrcode && "No QR Code yet."}
           </h3>
         </article>
@@ -92,7 +92,7 @@ const QRCodeComponent = () => {
               name="url"
               type="text"
               placeholder="Please URL enter"
-              className={`w-72 outline-none px-2 py-1 rounded-sm ${formik.errors.url && formik.touched.url ? "border border-red-500" : "border border-zinc-600"}`}
+              className={`w-full lg:w-72 outline-none px-2 py-1 rounded-sm ${formik.errors.url && formik.touched.url ? "border border-red-500" : "border border-zinc-600"}`}
             />
           </div>
           {formik.errors.url && formik.touched.url ? (
@@ -105,16 +105,16 @@ const QRCodeComponent = () => {
               <button
                 disabled={formik.errors.url && formik.touched.url}
                 type="sumbit"
-                className={`transition-colors duration-300 ease-in-out text-white px-2.5 py-1.5 rounded-sm ${formik.values.url ? "cursor-pointer hover:bg-blue-800 bg-blue-500" : "bg-blue-500/30 cursor-not-allowed"}`}
+                className={`transition-colors duration-300 ease-in-out text-white px-2.5 py-1.5 rounded-sm ${formik.values.url ? "cursor-pointer hover:bg-sky-600 bg-sky-500" : "bg-sky-500/30 cursor-not-allowed"}`}
                 onClick={downloadQRCode}
               >
                 Download
               </button>
             )}
             <button
-              disabled={formik.errors.url && formik.touched.url}
+              disabled={true}
               type="sumbit"
-              className={`transition-colors duration-300 ease-in-out text-white px-2.5 py-1.5 rounded-sm ${formik.values.url ? "cursor-pointer hover:bg-blue-800 bg-blue-500" : "bg-blue-500/30 cursor-not-allowed"}`}
+              className={`transition-colors duration-300 ease-in-out text-white px-2.5 py-1.5 rounded-sm ${formik.values.url ? "cursor-pointer hover:bg-sky-600 bg-sky-500" : "bg-sky-500/30 cursor-not-allowed"}`}
               onClick={isVisible}
             >
               Generate QR Code
@@ -125,5 +125,3 @@ const QRCodeComponent = () => {
     </section>
   );
 };
-
-export default QRCodeComponent;
