@@ -1,4 +1,4 @@
-# QR Code Generate 
+# QR Code Generate for URL.
 
 https://qr-code-vitereact.netlify.app/
 
