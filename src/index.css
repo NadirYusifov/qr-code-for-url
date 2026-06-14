@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @layer base {
-    li {
-        @apply my-5
-    }
+  li {
+    @apply my-5;
+  }
 }
