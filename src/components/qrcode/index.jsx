@@ -59,15 +59,15 @@ export const QRCodeComponent = () => {
   // ==============================
 
   return (
-    <section className="flex flex-col justify-center items-center h-dvh">
+    <section className="flex h-dvh flex-col items-center justify-center">
       <article>
-        <h1 className="text-[1.875rem] text-center font-bold mb-20">
+        <h1 className="mb-20 text-center text-[1.875rem] font-bold">
           QR Code Generate
         </h1>
       </article>
       <div>
         <article>
-          <h3 className="text-2xl font-bold text-center">
+          <h3 className="text-center text-2xl font-bold">
             {!qrcode && "No QR Code yet."}
           </h3>
         </article>
@@ -82,7 +82,7 @@ export const QRCodeComponent = () => {
           </div>
         )}
       </div>
-      <div className="flex flex-col items-center justify-center mt-10">
+      <div className="mt-10 flex flex-col items-center justify-center">
         <form onSubmit={formik.handleSubmit}>
           <div className="flex items-center gap-2">
             <label htmlFor="url">URL:</label>
@@ -94,20 +94,20 @@ export const QRCodeComponent = () => {
               name="url"
               type="text"
               placeholder="URL enter: https://example.com"
-              className={`w-full lg:w-72 outline-none px-2 py-1 rounded-sm ${formik.errors.url && formik.touched.url ? "border border-red-500" : "border border-zinc-600"}`}
+              className={`w-full rounded-sm px-2 py-1 outline-none lg:w-72 ${formik.errors.url && formik.touched.url ? "border border-red-500" : "border border-zinc-600"}`}
             />
           </div>
           {formik.errors.url && formik.touched.url ? (
-            <p className="text-[0.875rem] text-red-500 px-12">
+            <p className="px-12 text-[0.875rem] text-red-500">
               {formik.errors.url}
             </p>
           ) : null}
-          <div className="pt-4 flex justify-center items-center gap-x-3">
+          <div className="flex items-center justify-center gap-x-3 pt-4">
             {qrcode && (
               <button
                 disabled={formik.errors.url && formik.touched.url}
                 type="sumbit"
-                className={`transition-colors duration-300 ease-in-out text-white px-2.5 py-1.5 rounded-sm ${formik.values.url ? "cursor-pointer hover:bg-sky-600 bg-sky-500" : "bg-sky-500/30 cursor-not-allowed"}`}
+                className={`rounded-sm px-2.5 py-1.5 text-white transition-colors duration-300 ease-in-out ${formik.values.url ? "cursor-pointer bg-sky-500 hover:bg-sky-600" : "cursor-not-allowed bg-sky-500/30"}`}
                 onClick={downloadQRCode}
               >
                 Download
@@ -116,7 +116,7 @@ export const QRCodeComponent = () => {
             <button
               disabled={!formik.values.url}
               type="sumbit"
-              className={`transition-colors duration-300 ease-in-out text-white px-2.5 py-1.5 rounded-sm ${formik.values.url ? "cursor-pointer hover:bg-sky-600 bg-sky-500" : "bg-sky-500/30 cursor-not-allowed"}`}
+              className={`rounded-sm px-2.5 py-1.5 text-white transition-colors duration-300 ease-in-out ${formik.values.url ? "cursor-pointer bg-sky-500 hover:bg-sky-600" : "cursor-not-allowed bg-sky-500/30"}`}
               onClick={isVisible}
             >
               Generate QR Code

@@ -10,8 +10,8 @@ export const Header = () => {
   const [menu, setMenu] = useState(false);
 
   return (
-    <header className="w-full h-15 border border-gray-200 shadow-lg content-center">
-      <nav className="text-center flex justify-between container mx-auto px-4">
+    <header className="h-15 w-full content-center border border-gray-200 shadow-lg">
+      <nav className="container mx-auto flex justify-between px-4 text-center">
         <picture>
           <Link to={"/"}>
             <img
@@ -24,21 +24,21 @@ export const Header = () => {
             />
           </Link>
         </picture>
-        <div className="hidden lg:block space-x-0 lg:space-x-8">
+        <div className="hidden space-x-0 lg:block lg:space-x-8">
           <Link
-            className={`text-[1.125rem] hover:text-sky-700 transition-colors ease-in ${path === "/" && "text-sky-600"}`}
+            className={`text-[1.125rem] transition-colors ease-in hover:text-sky-700 ${path === "/" && "text-sky-600"}`}
             to={"/"}
           >
             Home
           </Link>
           <Link
-            className={`text-[1.125rem] hover:text-sky-700 transition-colors ease-in ${path === "/about" && "text-sky-600"}`}
+            className={`text-[1.125rem] transition-colors ease-in hover:text-sky-700 ${path === "/about" && "text-sky-600"}`}
             to={"/about"}
           >
             About
           </Link>
           <Link
-            className={`text-[1.125rem] hover:text-sky-700 transition-colors ease-in ${path === "/referance" && "text-sky-600"}`}
+            className={`text-[1.125rem] transition-colors ease-in hover:text-sky-700 ${path === "/referance" && "text-sky-600"}`}
             to={"/referance"}
           >
             Referance

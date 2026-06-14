@@ -2,9 +2,9 @@ export const Referance = () => {
   return (
     <section className="mb-30">
       <div className="container mx-auto px-4">
-        <h1 className="mt-3 font-medium text-3xl">Referances</h1>
+        <h1 className="mt-3 text-3xl font-medium">Referances</h1>
         <div className="mt-7">
-          <h2 className="font-bold text-2xl">Packages:</h2>
+          <h2 className="text-2xl font-bold">Packages:</h2>
           <ul>
             <li>
               <p>@tailwindcss/vite</p>
@@ -143,7 +143,7 @@ export const Referance = () => {
         </div>
 
         <div>
-          <h2 className="font-bold text-2xl">Special Thanks:</h2>
+          <h2 className="text-2xl font-bold">Special Thanks:</h2>
           <ul>
             <li>
               <p>The ERIN</p>

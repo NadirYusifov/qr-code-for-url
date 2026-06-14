@@ -4,8 +4,8 @@ import Logo from "/logo.png";
 export const About = () => {
   return (
     <section className="w-full">
-      <div className="container px-4 mx-auto">
-        <h1 className="text-2xl mt-20 mb-10">QR Code Generate</h1>
+      <div className="container mx-auto px-4">
+        <h1 className="mt-20 mb-10 text-2xl">QR Code Generate</h1>
         <artcile>
           <p className="text-lg">
             This is a website that generates a QR code for a URL or Link. You
@@ -47,7 +47,7 @@ export const About = () => {
             </a>
           </p>
         </artcile>
-        <picture className="flex justify-center my-20">
+        <picture className="my-20 flex justify-center">
           <img
             src={Logo}
             width={250}
