@@ -1,5 +1,5 @@
-import { QRCodeComponent } from '../../components/qrcode'
+import { QRCodeComponent } from "../../components/qrcode";
 
 export const Home = () => {
-  return <QRCodeComponent />
-}
+  return <QRCodeComponent />;
+};
