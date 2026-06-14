@@ -30,7 +30,7 @@ export const QRCodeComponent = () => {
     Own: The ERIN;
     GitHub: https://github.com/Jhimmyofficial;
     What was used: isVisible function and Download QRode for "downloadQRCode" use function;
-    
+
     Thanks!
   */
   const isVisible = (url) => {
@@ -49,7 +49,7 @@ export const QRCodeComponent = () => {
       .then(function (dataUrl) {
         const link = document.createElement("a");
         link.href = dataUrl;
-        link.download = "qr-code-png";
+        link.download = "qr-code-image";
         link.click();
       })
       .catch(function (error) {
@@ -61,7 +61,9 @@ export const QRCodeComponent = () => {
   return (
     <section className="flex flex-col justify-center items-center h-dvh">
       <article>
-        <h1 className="text-[1.875rem] text-center font-bold mb-20">QR Code Generate</h1>
+        <h1 className="text-[1.875rem] text-center font-bold mb-20">
+          QR Code Generate
+        </h1>
       </article>
       <div>
         <article>
@@ -91,7 +93,7 @@ export const QRCodeComponent = () => {
               id="url"
               name="url"
               type="text"
-              placeholder="Please URL enter"
+              placeholder="URL enter: https://example.com"
               className={`w-full lg:w-72 outline-none px-2 py-1 rounded-sm ${formik.errors.url && formik.touched.url ? "border border-red-500" : "border border-zinc-600"}`}
             />
           </div>
@@ -112,7 +114,7 @@ export const QRCodeComponent = () => {
               </button>
             )}
             <button
-              disabled={true}
+              disabled={!formik.values.url}
               type="sumbit"
               className={`transition-colors duration-300 ease-in-out text-white px-2.5 py-1.5 rounded-sm ${formik.values.url ? "cursor-pointer hover:bg-sky-600 bg-sky-500" : "bg-sky-500/30 cursor-not-allowed"}`}
               onClick={isVisible}
